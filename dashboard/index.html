@@ -1,0 +1,1598 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Bluezone</title>
+    <meta name="description" content="Bluezone">
+    <meta name="keywords" content="Bluezone" />
+    <link rel="icon" type="image/png" href="assets/img/bluezone logo.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/bluezone logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+    <script type="text/javascript" src="https://coinconvert.net/assets/js/crypto-convert.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/bluezone logo.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+    <div class="main__container">
+        <!-- App Sidebar -->
+        <div class="side-div p-0">
+            <!-- profile box -->
+            <div class="profileBox pt-2 pb-2" style="     margin-bottom: 5em;
+                margin-top: 2.5em;">
+                <div class="image-wrapper">
+                    <img src="assets/img/DP..png" alt="image" class="imaged  w36 rounded">
+                </div>
+                <div class="in">
+                    <div class="text-muted">Welcome back</div>
+                    <strong id="usersname">Users name</strong>
+                </div>
+            </div>
+            <!-- * profile box -->
+            <!-- balance -->
+            <!-- <div class="sidebar-balance"> -->
+            <!-- <div class="listview-title">Balance</div> -->
+            <!-- <div class="in"> -->
+            <!-- <h1 class="amount">$ 2,562.50</h1> -->
+            <!-- </div> -->
+            <!-- </div> -->
+            <!-- * balance -->
+            <!-- menu -->
+
+            <ul class="listview flush transparent no-line image-listview" style="border-radius:10px">
+                <li>
+                    <a href="#" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Dashboard
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Deposit Funds
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./app-withdrawal.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="card-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Withdraw
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./crypto-transactions.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Transactions
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./copytrade.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Copy trader
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./app-settings.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Settings
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./app-login.html" class="item">
+                        <div class="icon-box bg-danger">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Log out
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- * menu -->
+
+
+
+
+
+        </div>
+        <!-- * App Sidebar -->
+
+        <div class="side-right-div">
+            <div>
+
+
+                <!-- App Header -->
+                <div class="appHeader  text-light">
+                    <div class="left">
+                        <div class="profileBox pt-2 pb-2">
+                            <div class="image-wrapper">
+                                <img src="assets/img/DP..png" alt="image" class="imaged  w36 rounded">
+                            </div>
+                            <div class="in">
+                                <strong>Hi <span id="greetName"> </span></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="headerButton text-light" data-bs-toggle="modal"
+                            data-bs-target="#sidebarPanel">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <!-- * App Header -->
+
+
+                <!-- App Capsule -->
+                <div id="appCapsule">
+                    <!-- Wallet Card -->
+                    <div class="section full wallet-card-section pt-6">
+                        <div class="carousel-single splide">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <!-- card block -->
+                                        <div class="card-block bg-primary">
+                                            <div class="card-main">
+                                                <div class="card-icon">
+                                                    <div class="chart chart-sparkline-success-1"></div>
+                                                </div>
+                                                <div class="balance">
+                                                    <span class="label">BALANCE</span>
+                                                    <h1 class="title ">$ <span class="btccurrency">
+
+                                                            <input type="number" id="fiatvalue"
+                                                                style="background-color: transparent;border: none;"
+                                                                disabled name="fiatvalue" class="valuefield title"
+                                                                value="15000" min="0.1" step="0.01" required>
+
+                                                            <select style="display:none ;" name="fiatselect"
+                                                                id="fiatselect"></select>
+
+
+                                                        </span>
+                                                    </h1>
+                                                </div>
+                                                <div class="in">
+                                                    <div class="card-number">
+                                                        <span class="label">BITCOIN(BTC)</span>
+
+                                                        <select name="crytoselect" style="display:none ;"
+                                                            id="crytoselect"></select>
+                                                        <input type="number"
+                                                            style="background-color: transparent;border: none;color: #fff;"
+                                                            disabled id="crytovalue" name="crytovalue"
+                                                            class="valuefield" value="1" min="0.1" step="1" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- * card block -->
+                                    </li>
+                                    <li class="splide__slide">
+                                        <!-- card block -->
+                                        <div class="card-block bg-dark">
+                                            <div class="card-main">
+                                                <div class="card-icon">
+                                                    <div class="chart chart-sparkline-success-2"></div>
+                                                </div>
+                                                <div class="balance">
+                                                    <span class="label">INVESTMENT</span>
+                                                    <h1 class="title "><span class="btccurrency">
+                                                            <input type="number" id="fiatvalue"
+                                                                style="background-color: transparent;border: none;"
+                                                                disabled name="fiatvalue" class="balvalues title"
+                                                                value="65000" min="0.1" step="0.01" required>
+
+                                                            <select style="display:none ;" name="fiatselect"
+                                                                id="fiatselect"></select>
+
+                                                        </span>
+                                                    </h1>
+                                                </div>
+                                                <div class="in">
+                                                    <div class="card-number">
+
+                                                        <span class="label">BITCOIN(BTC)</span>
+                                                        <select name="crytoselect" style="display:none ;"
+                                                            id="crytoselect"></select>
+                                                        <input type="number"
+                                                            style="background-color: transparent;border: none;color: #fff;"
+                                                            disabled id="crytovalue" name="crytovalue"
+                                                            class="valuefield" value="" min="0.1" step="1" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- * card block -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Wallet Card -->
+
+
+
+
+
+                    <!-- Send Action Sheet -->
+                    <div class="modal fade action-sheet" id="sendActionSheet" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Fund account</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="action-sheet-content">
+                                        <form class="deposit__div">
+                                            <ul class="progress-bars">
+                                                <li class="progress-bars__dot full"></li>
+                                                <li class="progress-bars__connector"></li>
+                                                <li class="progress-bars__dot"></li>
+                                                <li class="progress-bars__connector"></li>
+                                                <li class="progress-bars__dot"></li>
+                                            </ul>
+
+                                            <div class="step step1">
+                                                <div class=" full  pb-4">
+
+                                                    <div class="content-header mb-05">Choose cryptocurrency</div>
+
+                                                    <select id="currency-select"
+                                                        class="form-select form-select-lg currency"
+                                                        style="border:1px solid #1c9ed9">
+                                                        <option id="bitcoin">Bitcoin</option>
+                                                        <option id="ethereum">Ethereum</option>
+                                                        <option id="usdt">USDT</option>
+                                                        <option id="bnb">BNB smart chain</option>
+                                                    </select>
+
+
+                                                    <div class="form-group basic p-0">
+                                                        <div class="exchange-heading">
+                                                            <!-- <label class="group-label" for="toAmount">To</label> -->
+                                                            <div class="exchange-wallet-info">
+                                                                Balance : <strong> 0.504 BTC</strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="exchange-group">
+                                                            <div class="input-col">
+                                                                <input type="text"
+                                                                    class="form-control form-control-lg pe-0 border-0"
+                                                                    id="toAmount" placeholder="0" value="0.014"
+                                                                    maxlength="10">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="step step2 hidden">
+
+
+
+
+
+
+
+                                                <div id="btc-con" align="center" style="margin:0 auto; display:none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class=" full  pb-4">
+                                                                <!-- <div class="content-header mb-05">Deposit</div> -->
+                                                                SEND <span> $1000</span> WORTH OF BITCOIN<br>
+                                                                TO THE WALLET ADDRESS BELOW
+                                                                <div class="content-footer mt-05">Please send only
+                                                                    Bitcoin to this address,
+                                                                    sending any other token may result to loss
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="full pt-2 clip-parent">
+                                                                <span class="tlt">Copy to Clipboard</span>
+                                                                <div class="left" id="wallet_address">
+                                                                    1FWgBvNQ9Cy5PWdzG9YNDD1hv7WEpVPy5L
+                                                                </div>
+                                                                <div class="right">
+                                                                    <ion-icon style="color:#fff"
+                                                                        name="clipboard-outline"></ion-icon>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="eth-con" align="center" style="margin:0 auto; display:none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class=" full  pb-4">
+                                                                <!-- <div class="content-header mb-05">Deposit</div> -->
+                                                                SEND <span> $1000</span> WORTH OF ETHEREUM<br>
+                                                                TO THE WALLET ADDRESS BELOW
+                                                                <div class="content-footer mt-05">Please send only
+                                                                    Ethereum to this address,
+                                                                    sending any other token may result to loss
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="full pt-2 clip-parent">
+                                                                <span class="tlt">Copy to Clipboard</span>
+                                                                <div class="left">
+                                                                    0xe58ad656244e17c5f51c91834276f1774671a2c</div>
+                                                                <div class="right">
+                                                                    <ion-icon style="color:#fff"
+                                                                        name="clipboard-outline"></ion-icon>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="usdt-con" align="center" style="margin:0 auto; display:none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class=" full  pb-4">
+                                                                <!-- <div class="content-header mb-05">Deposit</div> -->
+                                                                SEND <span> $1000</span> WORTH OF USDT (TRC20)<br>
+                                                                TO THE WALLET ADDRESS BELOW
+                                                                <div class="content-footer mt-05">Please send only Usdt
+                                                                    (Trc20) to this address,
+                                                                    sending any other token may result to loss
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="full pt-2 clip-parent">
+                                                                <span class="tlt">Copy to Clipboard</span>
+                                                                <div class="left">
+                                                                    TXsqcr5PeN7SZcE2JLQK1AZFjmTXWUyou7</div>
+                                                                <div class="right">
+                                                                    <ion-icon style="color:#fff"
+                                                                        name="clipboard-outline"></ion-icon>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="bnb-con" align="center" style="margin:0 auto; display:none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class=" full  pb-4">
+                                                                <!-- <div class="content-header mb-05">Deposit</div> -->
+                                                                SEND <span> $1000</span> WORTH OF BNB <br>
+                                                                TO THE WALLET ADDRESS BELOW
+                                                                <div class="content-footer mt-05">Please send only BNB
+                                                                    Smart chain (Bep20) to this address,
+                                                                    sending any other token may result to loss
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="full pt-2 clip-parent">
+                                                                <span class="tlt">Copy to Clipboard</span>
+                                                                <div class="left">
+                                                                    0xe58ad656244e17c5f51c91834276f1774671a2c7</div>
+                                                                <div class="right">
+                                                                    <ion-icon style="color:#fff"
+                                                                        name="clipboard-outline"></ion-icon>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </div>
+                                            <div class="step step3 hidden">
+                                                <div class="" style="height:30vh ;">
+                                                    <div class="section-title">Upload Proof of payment</div>
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <form>
+                                                                <div class="custom-file-upload" id="fileUpload1">
+                                                                    <input type="file" id="fileuploadInput"
+                                                                        accept=".png, .jpg, .jpeg">
+                                                                    <label for="fileuploadInput" style="height: 20vh;">
+                                                                        <span>
+                                                                            <strong>
+                                                                                <ion-icon
+                                                                                    name="arrow-up-circle-outline">
+                                                                                </ion-icon>
+                                                                                <i>Upload a Photo</i>
+                                                                            </strong>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="button-group">
+                                    <button id="previous" class="disabled button  btn-lg" disabled>
+                                        <ion-icon name="chevron-back-sharp"></ion-icon>
+                                    </button>
+                                    <button type="button" id="next" class="btn btn-primary btn-block btn-lg"
+                                        style=" margin: 0 2.5%;">Next</button>
+                                    <button onclick="deposit()" id="validate" type="submit"
+                                        class="btn btn-primary hidden button" style="    width: 100%;
+                                height: 56px;" data-bs-dismiss="modal">
+                                        Submit
+                                    </button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- * Send Action Sheet -->
+
+            <!-- * Deposit notification -->
+            <!-- * Deposit notification -->
+            <div id="notification-6" class="notification-box">
+                <div class="notification-dialog ios-style  bg-success">
+                    <div class="notification-content">
+                        <div class="in">
+                            <h3 class="subtitle">Sucessfully deposited.</h3>
+                            <div class="text">
+                                Your deposited amount will reflect soon.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- * Deposit notification -->
+
+
+            <div class="chart__trans">
+
+                <div class="section mt-2 mb-3 chart__trans-left">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_6fcd7"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                            new TradingView.MediumWidget(
+                                {
+                                    "symbols": [
+                                        [
+                                            "BTC/USD",
+                                            "BITSTAMP:BTCUSD|1D"
+                                        ],
+                                        [
+                                            "ETH",
+                                            "BITSTAMP:ETHUSD|1D"
+                                        ]
+                                    ],
+                                    "chartOnly": false,
+                                    "width": "100%",
+                                    "height": 300,
+                                    "locale": "en",
+                                    "colorTheme": "light",
+                                    "autosize": false,
+                                    "showVolume": false,
+                                    "hideDateRanges": false,
+                                    "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                    "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                                    "noTimeScale": false,
+                                    "valuesTracking": "1",
+                                    "chartType": "line",
+                                    "fontColor": "#787b86",
+                                    "gridLineColor": "rgba(42, 46, 57, 0.06)",
+                                    "backgroundColor": "rgba(255, 255, 255, 1)",
+                                    "color": "rgba(38, 198, 218, 1)",
+                                    "container_id": "tradingview_6fcd7"
+                                }
+                            );
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                    <!-- TradingView Widget BEGIN -->
+                    <!-- <div class="card"> -->
+                    <!-- TradingView Widget END -->
+                    <!-- <div class="card"> -->
+                    <!-- <div class="card-body"> -->
+                    <!-- <div id="chart-line"></div> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+
+                <!-- Transactions -->
+                <div class="section mt-4 chart__trans-right ">
+                    <div class="section-heading">
+                        <h2 class="title">Transactions</h2>
+                        <a href="crypto-transactions.html" class="link">View All</a>
+                    </div>
+                    <div class="card">
+                        <ul class="listview flush transparent no-line image-listview detailed-list mt-1 mb-1">
+                            <!-- item -->
+                            <li>
+                                <a href="#" class="item">
+                                    <div class="icon-box bg-success">
+                                        <ion-icon name="arrow-up-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        <div>
+                                            <strong>Bitcoin</strong>
+                                            <div class="text-small text-secondary">Deposit</div>
+                                        </div>
+                                        <div class="text-end">
+                                            <strong>$855,24</strong>
+                                            <div class="text-small">
+                                                Today 11:38 AM
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- * item -->
+                            <!-- item -->
+                            <li>
+                                <a href="#" class="item">
+                                    <div class="icon-box bg-warning">
+                                        <ion-icon name="arrow-down-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        <div>
+                                            <strong>Etherium</strong>
+                                            <div class="text-small text-secondary">Deposit</div>
+                                        </div>
+                                        <div class="text-end">
+                                            <strong>$40,68</strong>
+                                            <div class="text-small">
+                                                March 8, 2021
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- * item -->
+                            <!-- item -->
+                            <li>
+                                <a href="#" class="item">
+                                    <div class="icon-box">
+                                        <img src="assets/img/sample/avatar/avatar4.jpg" alt="image"
+                                            class="imaged rounded w36">
+
+                                    </div>
+                                    <div class="in">
+                                        <div>
+                                            <strong>Bitcoin</strong>
+                                            <div class="text-small text-secondary">Deposit</div>
+                                        </div>
+                                        <div class="text-end">
+                                            <strong>$100,00</strong>
+                                            <div class="text-small">
+                                                March 4, 2021
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- * item -->
+                            <!-- item -->
+                            <li>
+                                <a href="#" class="item">
+                                    <div class="icon-box bg-secondary">
+                                        <ion-icon name="swap-vertical-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        <div>
+                                            <strong>Tether</strong>
+                                            <div class="text-small text-secondary">Deposit</div>
+                                        </div>
+                                        <div class="text-end">
+                                            <strong>$2.405,48</strong>
+                                            <div class="text-small">
+                                                February 24, 2021
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- * item -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- * Transactions -->
+
+                <!-- app footer -->
+                <!-- <div class="appFooter"> -->
+                <!-- <div class="footer-title"> -->
+                <!-- Copyright © Finapp 2021. All Rights Reserved. -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- * app footer -->
+
+            </div>
+
+
+        </div>
+        <!-- * News -->
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- * App Capsule -->
+    </div>
+    </div>
+
+
+    <!-- * App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a class="item " data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+            <div class="col">
+                <ion-icon name="cash-outline"></ion-icon>
+                <strong>Deposit</strong>
+            </div>
+        </a>
+        <a href="app-withdrawal.html" class="item">
+            <div class="col">
+                <ion-icon name="card-outline"></ion-icon>
+                <strong>Withdraw</strong>
+            </div>
+        </a>
+        <a href="index.html" class="item ">
+            <div class="col">
+                <div class="action-button large">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.13478 20.7733V17.7156C9.13478 16.9351 9.77217 16.3023 10.5584 16.3023H13.4326C13.8102 16.3023 14.1723 16.4512 14.4393 16.7163C14.7063 16.9813 14.8563 17.3408 14.8563 17.7156V20.7733C14.8539 21.0978 14.9821 21.4099 15.2124 21.6402C15.4427 21.8705 15.7561 22 16.0829 22H18.0438C18.9596 22.0023 19.8388 21.6428 20.4872 21.0008C21.1356 20.3588 21.5 19.487 21.5 18.5778V9.86686C21.5 9.13246 21.1721 8.43584 20.6046 7.96467L13.934 2.67587C12.7737 1.74856 11.1111 1.7785 9.98539 2.74698L3.46701 7.96467C2.87274 8.42195 2.51755 9.12064 2.5 9.86686V18.5689C2.5 20.4639 4.04738 22 5.95617 22H7.87229C8.55123 22 9.103 21.4562 9.10792 20.7822L9.13478 20.7733Z"
+                            fill="#fff" />
+                    </svg>
+
+                </div>
+            </div>
+        </a>
+        <a href="trade.html" class="item">
+            <div class="col">
+                <ion-icon name="swap-vertical-outline"></ion-icon>
+                <strong>Trade</strong>
+            </div>
+        </a>
+        <a href="app-settings.html" class="item">
+            <div class="col">
+                <ion-icon name="settings-outline"></ion-icon>
+                <strong>Settings</strong>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar Mobile-->
+    <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <!-- profile box -->
+                    <div class="profileBox pt-2 pb-2">
+                        <div class="image-wrapper">
+                            <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged  w36 rounded">
+                        </div>
+                        <div class="in">
+                            <div class="text-muted">Welcome back</div>
+                            <strong>Victory Roberts</strong>
+                        </div>
+                        <a href="#" class="btn btn-link btn-icon sidebar-close" data-bs-dismiss="modal">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </a>
+                    </div>
+                    <!-- * profile box -->
+                    <!-- balance -->
+                    <div class="sidebar-balance">
+                        <div class="listview-title">Balance</div>
+                        <div class="in">
+                            <h1 class="amount">$ 2,562.50</h1>
+                        </div>
+                    </div>
+                    <!-- * balance -->
+                    <!-- menu -->
+                    <div class="listview-title mt-1">Menu</div>
+                    <ul class="listview flush transparent no-line image-listview">
+                        <li>
+                            <a href="./crypto-transactions.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="pie-chart-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Transactions
+
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./copytrade.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="pie-chart-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Copy trader
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item">
+                                <div class="icon-box bg-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-currency-bitcoin" viewBox="0 0 16 16">
+                                        <path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 
+                                   .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 
+                                   .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847
+                                    3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25
+                                     0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0
+                                      .138.112.25.25.25L5.5 13zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28V4.487zm0 4.051h1.84c1.137 
+                                      0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927V8.539z" />
+                                    </svg>
+                                </div>
+                                <div class="in">
+                                    Buy Crypto
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- * menu -->
+                    <!-- others -->
+                    <div class="listview-title mt-1">Others</div>
+                    <ul class="listview flush transparent no-line image-listview">
+                        <li>
+                            <a href="#" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="chatbubble-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Support
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="logout" class="item">
+                                <div class="icon-box bg-danger">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Log out
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- * others -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * App Sidebar Mobile -->
+
+
+
+
+
+
+
+
+
+    <!-- iOS Add to Home Action Sheet -->
+    <div class="modal inset fade action-sheet ios-add-to-home" id="ios-add-to-home-screen" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add to Home Screen</h5>
+                    <a href="#" class="close-button" data-bs-dismiss="modal">
+                        <ion-icon name="close"></ion-icon>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="action-sheet-content text-center">
+                        <div class="mb-1"><img src="assets/img/bluezone logo.png" alt="image" class="imaged w64 mb-2">
+                        </div>
+                        <div>
+                            Install <strong>Bluezone</strong> on your iPhone's home screen.
+                        </div>
+                        <div>
+                            Tap <ion-icon name="share-outline"></ion-icon> and Add to homescreen.
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-primary btn-block" data-bs-dismiss="modal">CLOSE</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * iOS Add to Home Action Sheet -->
+
+
+    <!-- Android Add to Home Action Sheet -->
+    <div class="modal inset fade action-sheet android-add-to-home" id="android-add-to-home-screen" tabindex="-1"
+        role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add to Home Screen</h5>
+                    <a href="#" class="close-button" data-bs-dismiss="modal">
+                        <ion-icon name="close"></ion-icon>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="action-sheet-content text-center">
+                        <div class="mb-1">
+                            <img src="assets/img/bluezone logo.png" alt="image" class="imaged w64 mb-2">
+                        </div>
+                        <div>
+                            Install <strong>Bluezone</strong> on your Android's home screen.
+                        </div>
+                        <div>
+                            Tap <ion-icon name="ellipsis-vertical"></ion-icon> and Add to homescreen.
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-primary btn-block" data-bs-dismiss="modal">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * Android Add to Home Action Sheet -->
+
+
+
+    <!-- ========= JS Files =========  -->
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+    <!-- Apex Charts -->
+    <script src="assets/js/plugins/apexcharts/apexcharts.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+    <script src="./scripts/profile.js"></script>
+    <script>
+        // Demo Charts
+        // Chart Line
+        var optionChartLine = {
+            series: [{
+                data: [555, 1222, 777, 888, 555, 888, 999, 1222]
+            }],
+            chart: {
+                type: 'area',
+                width: '100%',
+                height: 150,
+                sparkline: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                width: 2,
+            },
+            colors: ['#6236FF'],
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E', 'Team F', 'Team G', 'Team H'],
+        };
+        var chartLine = new ApexCharts(document.querySelector("#chart-line"), optionChartLine);
+        chartLine.render();
+        // Chart Pie
+        var optionChartPie = {
+            series: [44, 55, 13, 43, 22],
+            chart: {
+                sparkline: {
+                    enabled: true
+                },
+                type: 'pie',
+            },
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        };
+        var chartPie = new ApexCharts(document.querySelector("#chart-pie"), optionChartPie);
+        chartPie.render();
+        // Chart Donut
+        var optionChartDonut = {
+            series: [44, 55, 13, 43, 22],
+            chart: {
+                sparkline: {
+                    enabled: true
+                },
+                type: 'donut',
+            },
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+        };
+        var chartDonut = new ApexCharts(document.querySelector("#chart-donut"), optionChartDonut);
+        chartDonut.render();
+        // Chart Bar
+        var optionChartBar = {
+            series: [{
+                data: [555, 1222, 777, 888, 555, 888, 999, 1222]
+            }],
+            chart: {
+                type: 'bar',
+                width: '100%',
+                height: 150,
+                sparkline: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                width: 2,
+            },
+            colors: ['#6236FF'],
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E', 'Team F', 'Team G', 'Team H'],
+        };
+        var chartBar = new ApexCharts(document.querySelector("#chart-bar"), optionChartBar);
+        chartBar.render();
+        // Chart Radar
+        var optionChartCandleStick = {
+            series: [{
+                data: [{
+                    x: new Date(1538778600000),
+                    y: [6629.81, 6650.5, 6623.04, 6633.33]
+                },
+                {
+                    x: new Date(1538780400000),
+                    y: [6632.01, 6643.59, 6620, 6630.11]
+                },
+                {
+                    x: new Date(1538782200000),
+                    y: [6630.71, 6648.95, 6623.34, 6635.65]
+                },
+                {
+                    x: new Date(1538784000000),
+                    y: [6635.65, 6651, 6629.67, 6638.24]
+                },
+                {
+                    x: new Date(1538785800000),
+                    y: [6638.24, 6640, 6620, 6624.47]
+                },
+                {
+                    x: new Date(1538787600000),
+                    y: [6624.53, 6636.03, 6621.68, 6624.31]
+                },
+                {
+                    x: new Date(1538789400000),
+                    y: [6624.61, 6632.2, 6617, 6626.02]
+                },
+                {
+                    x: new Date(1538791200000),
+                    y: [6627, 6627.62, 6584.22, 6603.02]
+                },
+                {
+                    x: new Date(1538793000000),
+                    y: [6605, 6608.03, 6598.95, 6604.01]
+                },
+                {
+                    x: new Date(1538794800000),
+                    y: [6604.5, 6614.4, 6602.26, 6608.02]
+                },
+                {
+                    x: new Date(1538796600000),
+                    y: [6608.02, 6610.68, 6601.99, 6608.91]
+                },
+                {
+                    x: new Date(1538798400000),
+                    y: [6608.91, 6618.99, 6608.01, 6612]
+                },
+                {
+                    x: new Date(1538800200000),
+                    y: [6612, 6615.13, 6605.09, 6612]
+                },
+                {
+                    x: new Date(1538802000000),
+                    y: [6612, 6624.12, 6608.43, 6622.95]
+                },
+                {
+                    x: new Date(1538803800000),
+                    y: [6623.91, 6623.91, 6615, 6615.67]
+                },
+                {
+                    x: new Date(1538805600000),
+                    y: [6618.69, 6618.74, 6610, 6610.4]
+                },
+                {
+                    x: new Date(1538807400000),
+                    y: [6611, 6622.78, 6610.4, 6614.9]
+                },
+                {
+                    x: new Date(1538809200000),
+                    y: [6614.9, 6626.2, 6613.33, 6623.45]
+                },
+                {
+                    x: new Date(1538811000000),
+                    y: [6623.48, 6627, 6618.38, 6620.35]
+                },
+                {
+                    x: new Date(1538812800000),
+                    y: [6619.43, 6620.35, 6610.05, 6615.53]
+                },
+                {
+                    x: new Date(1538814600000),
+                    y: [6615.53, 6617.93, 6610, 6615.19]
+                },
+                {
+                    x: new Date(1538816400000),
+                    y: [6615.19, 6621.6, 6608.2, 6620]
+                },
+                {
+                    x: new Date(1538818200000),
+                    y: [6619.54, 6625.17, 6614.15, 6620]
+                },
+                {
+                    x: new Date(1538820000000),
+                    y: [6620.33, 6634.15, 6617.24, 6624.61]
+                },
+                {
+                    x: new Date(1538821800000),
+                    y: [6625.95, 6626, 6611.66, 6617.58]
+                },
+                {
+                    x: new Date(1538823600000),
+                    y: [6619, 6625.97, 6595.27, 6598.86]
+                },
+                {
+                    x: new Date(1538825400000),
+                    y: [6598.86, 6598.88, 6570, 6587.16]
+                },
+                {
+                    x: new Date(1538827200000),
+                    y: [6588.86, 6600, 6580, 6593.4]
+                },
+                {
+                    x: new Date(1538829000000),
+                    y: [6593.99, 6598.89, 6585, 6587.81]
+                },
+                {
+                    x: new Date(1538830800000),
+                    y: [6587.81, 6592.73, 6567.14, 6578]
+                },
+                {
+                    x: new Date(1538832600000),
+                    y: [6578.35, 6581.72, 6567.39, 6579]
+                },
+                {
+                    x: new Date(1538834400000),
+                    y: [6579.38, 6580.92, 6566.77, 6575.96]
+                },
+                {
+                    x: new Date(1538836200000),
+                    y: [6575.96, 6589, 6571.77, 6588.92]
+                },
+                {
+                    x: new Date(1538838000000),
+                    y: [6588.92, 6594, 6577.55, 6589.22]
+                },
+                {
+                    x: new Date(1538839800000),
+                    y: [6589.3, 6598.89, 6589.1, 6596.08]
+                }
+                ]
+            }],
+            chart: {
+                type: 'candlestick',
+                sparkline: {
+                    enabled: true
+                }
+            },
+            plotOptions: {
+                candlestick: {
+                    colors: {
+                        upward: '#1DCC70',
+                        downward: '#FF396F'
+                    }
+                }
+            },
+            xaxis: {
+                type: 'datetime'
+            },
+            yaxis: {
+                tooltip: {
+                    enabled: true
+                }
+            }
+        };
+        var sparklineAreaExampleSuccess1 = {
+            series: [{
+                data: [555, 1222, 777, 888, 555, 888, 999, 1222]
+            }],
+            chart: {
+                type: 'area',
+                width: '100%',
+                height: 70,
+                sparkline: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                width: 2,
+            },
+            colors: ['#1DCC70'],
+            tooltip: {
+                enabled: false
+            }
+        };
+        var sparklineAreaExampleSuccess2 = {
+            series: [{
+                data: [55, 66, 55, 77, 66, 180, 290, 333]
+            }],
+            chart: {
+                type: 'area',
+                width: '100%',
+                height: 70,
+                sparkline: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                width: 2,
+            },
+            colors: ['#1DCC70'],
+            tooltip: {
+                enabled: false
+            }
+        };
+        var chartCandleStick = new ApexCharts(document.querySelector("#chart-candlestick"), optionChartCandleStick)
+        chartCandleStick.render();
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.chart-sparkline-success-1').forEach(chart => new ApexCharts(chart, sparklineAreaExampleSuccess1).render());
+            document.querySelectorAll('.chart-sparkline-success-2').forEach(chart => new ApexCharts(chart, sparklineAreaExampleSuccess2).render());
+        })
+    </script>
+
+    <script>
+        // Add to Home with 2 seconds delay.
+        AddtoHome("2000", "once");
+    </script>
+
+    <script>
+        const previousButton = document.getElementById("previous")
+        const nextButton = document.getElementById("next")
+        const submitButton = document.getElementById('validate')
+        const form = document.getElementById('stepByStepForm')
+        const dots = document.getElementsByClassName('progress-bar__dot')
+        const numberOfSteps = 3
+        let currentStep = 1
+
+        for (let i = 0; i < dots.length; ++i) {
+            dots[i].addEventListener('click', () => {
+                goToStep(i + 1)
+            })
+        }
+
+        previousButton.onclick = goPrevious
+        nextButton.onclick = goNext
+
+
+        function goNext (e) {
+            e.preventDefault()
+            currentStep += 1
+            goToStep(currentStep)
+        }
+
+        function goPrevious (e) {
+            e.preventDefault()
+            currentStep -= 1
+            goToStep(currentStep)
+        }
+
+        function goToStep (stepNumber) {
+            currentStep = stepNumber
+
+            let inputsToHide = document.getElementsByClassName('step')
+            let inputs = document.getElementsByClassName(`step${currentStep}`)
+            let indicators = document.getElementsByClassName('progress-bars__dot')
+
+            for (let i = indicators.length - 1; i >= currentStep; --i) {
+                indicators[i].classList.remove('full')
+            }
+
+            for (let i = 0; i < currentStep; ++i) {
+                indicators[i].classList.add('full')
+            }
+
+            //hide all input
+            for (let i = 0; i < inputsToHide.length; ++i) {
+                hide(inputsToHide[i])
+            }
+
+            //only show the right one
+            for (let i = 0; i < inputs.length; ++i) {
+                show(inputs[i])
+            }
+
+            //if we reached final step
+            if (currentStep === numberOfSteps) {
+                enable(previousButton)
+                hide(nextButton)
+                show(submitButton)
+            }
+
+            //else if first step
+            else if (currentStep === 1) {
+                disable(previousButton)
+                show(nextButton)
+                enable(next)
+                hide(submitButton)
+            }
+
+            else {
+                enable(previousButton)
+                show(nextButton)
+                enable(next)
+                hide(submitButton)
+            }
+        }
+
+        function enable (elem) {
+            elem.classList.remove("disabled");
+            elem.disabled = false;
+        }
+
+        function disable (elem) {
+            elem.classList.add("disabled");
+            elem.disabled = true;
+        }
+
+        function show (elem) {
+            elem.classList.remove('hidden')
+        }
+
+        function hide (elem) {
+            elem.classList.add('hidden')
+        }
+
+
+
+
+
+
+        let toolt = document.querySelector('.parent');
+        let span = toolt.querySelector('.tlt');
+
+
+        function showToolTip (e) {
+            span.classList.add('show');
+            if (e.type == "click") {
+                span.innerText = "copied"
+                let range = document.createRange();
+                range.selectNode(this.querySelector('.left'));
+                window.getSelection().addRange(range);
+                document.execCommand("copy");
+            }
+        }
+
+        function hideToolTip () {
+            span.classList.remove('show');
+            span.innerText = "Copt to Clipboard"
+        }
+
+        toolt.addEventListener('click', showToolTip)
+        toolt.addEventListener('mouseenter', showToolTip)
+        toolt.addEventListener('mouseleave', hideToolTip)
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+    <script>
+        $(function () {
+            $("#currency-select").change(function () {
+                if ($("#bitcoin").is(":selected")) {
+                    $("#btc-con").show();
+                    $("#eth-con").hide();
+                    $("#usdt-con").hide();
+                    $("#bnb-con").hide();
+
+                    $("#btc-input").show();
+                    $("#eth-input").hide();
+                    $("#usdt-input").hide();
+                    $("#bnb-input").hide();
+                }
+                if ($("#ethereum").is(":selected")) {
+                    $("#btc-con").hide();
+                    $("#eth-con").show();
+                    $("#usdt-con").hide();
+                    $("#bnb-con").hide();
+
+
+                    $("#btc-input").hide();
+                    $("#eth-input").show();
+                    $("#usdt-input").hide();
+                    $("#bnb-input").hide();
+                }
+                if ($("#usdt").is(":selected")) {
+                    $("#btc-con").hide();
+                    $("#eth-con").hide();
+                    $("#usdt-con").show();
+                    $("#bnb-con").hide();
+
+
+                    $("#btc-input").hide();
+                    $("#eth-input").hide();
+                    $("#usdt-input").show();
+                    $("#bnb-input").hide();
+                } if ($("#bnb").is(":selected")) {
+                    $("#btc-con").hide();
+                    $("#eth-con").hide();
+                    $("#usdt-con").hide();
+                    $("#bnb-con").show();
+
+                    $("#btc-input").hide();
+                    $("#eth-input").hide();
+                    $("#usdt-input").hide();
+                    $("#bnb-input").show();
+                }
+            }).trigger('change');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        const cryptoInput = document.querySelector('#crytovalue')
+        const fiatInput = document.querySelector('#fiatvalue')
+        const crytoselect = document.querySelector('#crytoselect')
+        const fiatselect = document.querySelector('#fiatselect')
+        const fiat = [
+            {
+                currency: "USD",
+                country: "United States Dollar"
+            },
+
+        ]
+        const coins = [
+            {
+                currency: "BTC",
+                country: "Bitcoin"
+            },
+            {
+                currency: "XBT",
+                country: "Bitcoin"
+            },
+        ]
+
+        insertCurrencies(coins, crytoselect)
+        insertCurrencies(fiat, fiatselect)
+
+        function insertCurrencies (curr, selectEl) {
+            curr.forEach(c => {
+                selectEl.appendChild(currOption(c.currency, c.country))
+            })
+            function currOption (value, title) {
+                const o = document.createElement('option')
+                o.title = title
+                o.value = value
+                o.text = value
+                o.className = 'calcoption'
+                return o
+            }
+        }
+
+        calc('crypto')
+        fiatInput.onkeyup = () => calc()
+        fiatInput.onchange = () => calc()
+        cryptoInput.onkeyup = () => calc('crypto')
+        cryptoInput.onchange = () => calc('crypto')
+
+        fiatselect.onchange = () => calc('crypto')
+        crytoselect.onchange = () => calc()
+
+        async function calc (changer) {
+            const fiat = fiatselect.value
+            const cryptoVal = Number(cryptoInput.value)
+            const fiatVal = Number(fiatInput.value)
+            const res = await fetch(`https://api.coindesk.com/v1/bpi/currentprice/${fiat.toLowerCase()}.json`)
+            const json = await res.json()
+            const exchangeRate = parseInt(json.bpi[fiat].rate_float)
+            if (changer === 'crypto') {
+                const amount = fiatVal / exchangeRate
+                cryptoInput.value = parseFloat(amount).toFixed(4)
+            } else {
+                const amount = cryptoVal * exchangeRate
+                fiatInput.innerHTML = amount.toFixed(2)
+            }
+        }
+
+    </script>
+
+
+
+    <script>
+        const cryptoInput = document.querySelector('#crytovalue')
+        const fiatInput = document.querySelector('#flatvalue')
+        const crytoselect = document.querySelector('#cryptoselect')
+        const fiatselect = document.querySelector('#flatselect')
+        const baseCoin = [
+            {
+                currency: "USD",
+                country: "United States Dollar"
+            },
+
+        ]
+        const cryptoCoins = [
+            {
+                currency: "bitcoin",
+                country: "btc"
+            },
+            {
+                currency: "ethereum",
+                country: "eth"
+            },
+        ]
+
+        insertCurrencies(cryptoCoins, crytoselect)
+        insertCurrencies(baseCoin, fiatselect)
+
+        function insertCurrencies (curr, selectEl) {
+            curr.forEach(c => {
+                selectEl.appendChild(currOption(c.currency, c.country))
+            })
+            function currOption (value, title) {
+                const o = document.createElement('option')
+                o.title = title
+                o.value = value
+                o.text = value
+                o.className = 'calcoption'
+                return o
+            }
+        }
+
+        calc('crypto')
+        fiatInput.onkeyup = () => calc()
+        fiatInput.onchange = () => calc()
+        cryptoInput.onkeyup = () => calc('crypto')
+        cryptoInput.onchange = () => calc('crypto')
+
+        fiatselect.onchange = () => calc('crypto')
+        crytoselect.onchange = () => calc()
+
+        async function calc (changer) {
+            const fiat = fiatselect.value
+            const cryptoVal = Number(cryptoInput.value)
+            const fiatVal = Number(fiatInput.value)
+            const res = await fetch(` https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${fiat.toLowerCase()}`)
+
+            const json = await res.json()
+            const exchangeRate = parseInt(json.bpi[fiat].rate_float)
+            if (changer === 'crypto') {
+                const amount = fiatVal / exchangeRate
+                cryptoInput.value = parseFloat(amount).toFixed(4)
+            } else {
+                const amount = cryptoVal * exchangeRate
+                fiatInput.innerHTML = amount.toFixed(2)
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- <script type="text/javascript" src="/assets/js/script.js"></script> -->
+    <script type="text/javascript">
+
+        $('#depo').click(function () {
+            var token = localStorage.token;
+            console.log(token)
+            $.ajax({
+                mode: 'cors',
+                url: "https://trustpaddi-waitlist.herokuapp.com/deposit/add",
+                type: 'POST',
+                contentType: 'application/json',
+                headers: {
+                    "Authorization": "Bearer " + token + ""
+                },
+                success: function (data) {
+                    console.log(data)
+                }, error: function () {
+                    alert(
+                        'Invalid param',
+                        ' ',
+                        'warning'
+                    );
+                }
+            });
+        });   
+    </script>
+
+    <script>
+        const email = localStorage.email
+        const token = localStorage.token
+        const user = localStorage.user
+        const wallet = localStorage.wallet;
+
+        const pop = document.querySelector('#fileuploadInput')
+        const submitDepositButton = document.querySelector('#validate')
+        const currency = document.querySelector('#currency-select').value
+        const amount = document.querySelector('#toAmount').value
+        let file
+
+        pop.addEventListener('change', (e) => {
+            file = e.target.files[0]        
+        })
+
+        let formData = new FormData()
+
+        let myHeaders = new Headers()
+        myHeaders.append("Accept", "multipart/form-data")
+        myHeaders.append('Authorization', `Bearer ${token}`)
+
+        const deposit = () => {
+            formData.append("pop", file)
+            formData.append("_id", user)
+            formData.append("currency", currency)
+            formData.append("amount", amount)
+            formData.append("wallet", wallet_address.innerText)
+
+            let requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: formData,
+            }
+
+            fetch(
+                "https://trustpaddi-waitlist.herokuapp.com/deposit/add",
+                requestOptions
+            )
+                .then(response => response.json())
+                .then(response => {
+                    console.log('response: ', response)
+                    notification('notification-6', 3000)
+                })
+                .catch(error => {
+                    console.log('error: ', error)
+                })
+        }
+    </script>
+</body>
+
+</html>

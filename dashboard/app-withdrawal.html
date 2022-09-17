@@ -250,7 +250,7 @@
                                                         </div>
                                                         <div class="input-col">
                                                             <input type="text"
-                                                                class="form-control form-control-lg pe-0 border-0 wallet_address" id="wallet_address
+                                                                class="form-control form-control-lg pe-0 border-0 wallet_address"
                                                                 placeholder=" fhr84848wvj22huvi8u4i4v4y247">
                                                         </div>
 
@@ -277,7 +277,7 @@
             </div>
 
             </form>
-            
+
             <!-- * Deposit notification -->
             <div id="notification-6" class="notification-box">
                 <div class="notification-dialog ios-style  bg-success">
@@ -445,12 +445,12 @@
                     method: 'post',
                     url: "https://trustpaddi-waitlist.herokuapp.com/withdraw/withdraw",
                     headers: { 'Authorization': `Bearer ${token}` },
-                    data: { 
+                    data: {
                         _id: user,
                         amount: amount.value,
                         currency: currency.value,
                         wallet: wallet.value
-                     }
+                    }
                 })
                 notification('notification-6', 3000)
             })

@@ -236,6 +236,8 @@
                                     localStorage.token = data.token;
                                     localStorage.user = data.user._id;
                                     localStorage.email = data.user.email
+                                    localStorage.name = data.user.name
+                                    localStorage.wallet = data.user._id
                                     window.location.href = "dashboard/";
                                 },
                                 error: function (err) {

@@ -302,8 +302,7 @@
                                 type: "POST",
                                 url: "https://trustpaddi-waitlist.herokuapp.com/auth/signup",
                                 data: {
-                                    firstName: firstName,
-                                    lastName: lastName,
+                                    name: `${firstName} ${lastName}`,
                                     phone: phone,
                                     email: email,
                                     password: password

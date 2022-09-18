@@ -14,7 +14,7 @@ const token = localStorage.token;
       data: { email }
     })
 
-    name.innerText = `${user.data.user.firstName} ${user.data.user.lastName}`
+    name.innerText = user.data.user.name
     wallet_address.innerText = `${user.data.user._id}`
   } catch (error) {
     console.log("Error sending get profile requst: ", error.message)

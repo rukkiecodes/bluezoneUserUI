@@ -10,7 +10,8 @@
   })
 
   if (transactions.data.transactions.length > 0) {
-    transactions.data.transactions.forEach(item => {
+    let _transactions = transactions.data.transactions.slice(0, 5)
+    _transactions.forEach(item => {
       getTransactions.innerHTML += `<li>
                                 <a href="#" class="item">
                                     <div class="icon-box bg-success">

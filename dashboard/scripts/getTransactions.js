@@ -56,7 +56,6 @@
                         <div class="" style="font-size: 0.8rem ;">No transactions yet</div>
                     </div>
                 </div> `
-
   }
 })();
 

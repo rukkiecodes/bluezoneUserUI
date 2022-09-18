@@ -4,7 +4,6 @@ const token = localStorage.token;
 
 (async () => {
   const name = document.querySelector('#usersname')
-  const wallet_address = document.querySelector('#wallet_address')
 
   try {
     const user = await axios({
@@ -15,7 +14,6 @@ const token = localStorage.token;
     })
 
     name.innerText = user.data.user.name
-    wallet_address.innerText = `${user.data.user._id}`
   } catch (error) {
     console.log("Error sending get profile requst: ", error.message)
   }

@@ -79,7 +79,6 @@
                         </div>
                         <div class="in">
                             Withdraw
-
                         </div>
                     </a>
                 </li>
@@ -175,26 +174,18 @@
                                                     <div class="chart chart-sparkline-success-1"></div>
                                                 </div>
                                                 <div class="balance">
-                                                    <span class="label">BALANCE</span>
+                                                    <span class="label">INVESTMENT</span>
                                                     <h1 class="title ">$ <span class="btccurrency">
-
-                                                            <input type="number" id="fiatvalue"
-                                                                style="background-color: transparent;border: none;"
-                                                                disabled name="fiatvalue" class="valuefield title"
-                                                                value="15000" min="0.1" step="0.01" required>
-
-                                                            <select style="display:none ;" name="fiatselect"
-                                                                id="fiatselect"></select>
-
-
-                                                        </span>
+                                                        <input type="number" id="fiatvalue" style="background-color: transparent; border: none; margin-top: -1px;" disabled name="fiatvalue" class="valuefield title" value="15000" min="0.1" step="0.01" required>
+                                                        <select style="display:none;" name="fiatselect" id="fiatselect"></select>
+                                                    </span>
                                                     </h1>
                                                 </div>
                                                 <div class="in">
                                                     <div class="card-number">
                                                         <span class="label">BITCOIN(BTC)</span>
 
-                                                        <select name="crytoselect" style="display:none ;"
+                                                        <select name="crytoselect" style="display:none;"
                                                             id="crytoselect"></select>
                                                         <input type="number"
                                                             style="background-color: transparent;border: none;color: #fff;"
@@ -214,7 +205,7 @@
                                                     <div class="chart chart-sparkline-success-2"></div>
                                                 </div>
                                                 <div class="balance">
-                                                    <span class="label">INVESTMENT</span>
+                                                    <span class="label">EARNINGS</span>
                                                     <h1 class="title "><span class="btccurrency">
                                                             <input type="number" id="fiatvalue"
                                                                 style="background-color: transparent;border: none;"
@@ -329,10 +320,10 @@
 
                                                             <div class="full pt-2 clip-parent">
                                                                 <span class="tlt">Copy to Clipboard</span>
-                                                                <div class="left" id="wallet_address">
+                                                                <div class="left bitcoin_wallet_address">
                                                                     1FWgBvNQ9Cy5PWdzG9YNDD1hv7WEpVPy5L
                                                                 </div>
-                                                                <div class="right">
+                                                                <div class="right bitcoin_wallet_address_copy">
                                                                     <ion-icon style="color:#fff"
                                                                         name="clipboard-outline"></ion-icon>
                                                                 </div>
@@ -357,9 +348,9 @@
 
                                                             <div class="full pt-2 clip-parent">
                                                                 <span class="tlt">Copy to Clipboard</span>
-                                                                <div class="left">
+                                                                <div class="left eth_wallet_address">
                                                                     0xe58ad656244e17c5f51c91834276f1774671a2c</div>
-                                                                <div class="right">
+                                                                <div class="right eth_wallet_address_copy">
                                                                     <ion-icon style="color:#fff"
                                                                         name="clipboard-outline"></ion-icon>
                                                                 </div>
@@ -383,9 +374,9 @@
 
                                                             <div class="full pt-2 clip-parent">
                                                                 <span class="tlt">Copy to Clipboard</span>
-                                                                <div class="left">
+                                                                <div class="left usdt_wallet_address">
                                                                     TXsqcr5PeN7SZcE2JLQK1AZFjmTXWUyou7</div>
-                                                                <div class="right">
+                                                                <div class="right usdt_wallet_address_copy">
                                                                     <ion-icon style="color:#fff"
                                                                         name="clipboard-outline"></ion-icon>
                                                                 </div>
@@ -410,9 +401,9 @@
 
                                                             <div class="full pt-2 clip-parent">
                                                                 <span class="tlt">Copy to Clipboard</span>
-                                                                <div class="left">
+                                                                <div class="left bnb_wallet_address">
                                                                     0xe58ad656244e17c5f51c91834276f1774671a2c7</div>
-                                                                <div class="right">
+                                                                <div class="right bnb_wallet_address_copy">
                                                                     <ion-icon style="color:#fff"
                                                                         name="clipboard-outline"></ion-icon>
                                                                 </div>
@@ -824,6 +815,8 @@
     <script src="./scripts/profile.js"></script>
     <script src="./scripts/deposit.js"></script>
     <script src="./scripts/getTransactions.js"></script>
+    <script src="./scripts/investment.js"></script>
+    <script src="./scripts/copy.js"></script>
     <script>
         // Demo Charts
         // Chart Line

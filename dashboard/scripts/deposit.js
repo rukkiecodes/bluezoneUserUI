@@ -1,9 +1,19 @@
 const submitDepositButton = document.querySelector('#validate');
 const pop = document.querySelector('#fileuploadInput');
 
-const currency = document.querySelector('#currency-select').value;
+const currency = document.querySelector('#currency-select');
 const amount = document.querySelector('#toAmount').value;
+const bitcoin_wallet_address = document.querySelector('.bitcoin_wallet_address').innerText.replace(/\s+/g, '')
+const eth_wallet_address = document.querySelector('.eth_wallet_address').innerText.replace(/\s+/g, '')
+const usdt_wallet_address = document.querySelector('.usdt_wallet_address').innerText.replace(/\s+/g, '')
+const bnb_wallet_address = document.querySelector('.bnb_wallet_address').innerText.replace(/\s+/g, '')
+
 let file
+let _currency = currency.value
+
+currency.addEventListener('click', e => {
+  _currency = e.target.value
+})
 
 pop.addEventListener('change', (e) => {
   file = e.target.files[0]
@@ -13,7 +23,7 @@ let formData = new FormData()
 let myHeaders = new Headers()
 
 submitDepositButton.addEventListener('click', function () {
-  const { email, token, user, wallet, name } = localStorage;
+  const { token, user, name } = localStorage;
 
   myHeaders.append("Accept", "multipart/form-data")
   myHeaders.append('Authorization', `Bearer ${token}`)
@@ -23,7 +33,7 @@ submitDepositButton.addEventListener('click', function () {
   formData.append("currency", currency)
   formData.append("amount", amount)
   formData.append("name", name)
-  formData.append("wallet", wallet)
+  formData.append("wallet", _currency == 'Bitcoin' ? bitcoin_wallet_address : _currency == 'Ethereum' ? eth_wallet_address : _currency == 'USDT' ? usdt_wallet_address : _currency == 'BNB smart chain' ? bnb_wallet_address : null)
 
   let requestOptions = {
     method: "POST",

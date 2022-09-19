@@ -3,6 +3,12 @@ const currency = document.querySelector('#currency-select');
 const wallet = document.querySelector('.wallet_address');
 const validate = document.querySelector('#validate');
 
+let _currency = currency.value
+
+currency.addEventListener('click', e => {
+  _currency = e.target.value
+})
+
 validate.addEventListener('click', async () => {
   const { user, token, name } = localStorage;
   await axios({
@@ -12,7 +18,7 @@ validate.addEventListener('click', async () => {
     data: {
       _id: user,
       amount: amount.value,
-      currency: currency.value,
+      currency: _currency,
       wallet: wallet.value,
       name
     }

@@ -4,6 +4,7 @@ const token = localStorage.token;
 
 (async () => {
   const name = document.querySelector('#usersname')
+  const fiatvalue = document.querySelector('#fiatvalue');
 
   try {
     const user = await axios({
@@ -13,8 +14,11 @@ const token = localStorage.token;
       data: { email }
     })
 
-    name.innerText = user.data.user.name
+    name.innerText = user.data.user.name;
+    fiatvalue.value = user.data.user.investment.toFixed(3);
   } catch (error) {
     console.log("Error sending get profile requst: ", error.message)
   }
 })()
+
+// investment

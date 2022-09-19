@@ -26,7 +26,7 @@
                                         <div class="text-end">
                                             <strong>$${item.amount}</strong>
                                             <div class="text-small">
-                                                ${new Date(item.createdAt).getMonth()}/${new Date(item.createdAt).getFullYear()}
+                                                ${item.time}
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                         <div class="text-end">
                                             <strong>$${item.amount}</strong>
                                             <div class="text-small">
-                                                ${new Date(item.createdAt).getMonth()}/${new Date(item.createdAt).getFullYear()}
+                                                ${item.time}
                                             </div>
                                         </div>
                                     </div>

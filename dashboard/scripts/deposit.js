@@ -2,7 +2,7 @@ const submitDepositButton = document.querySelector('#validate');
 const pop = document.querySelector('#fileuploadInput');
 
 const currency = document.querySelector('#currency-select');
-const amount = document.querySelector('#toAmount').value;
+const amount = document.querySelector('#toAmount');
 const bitcoin_wallet_address = document.querySelector('.bitcoin_wallet_address').innerText.replace(/\s+/g, '')
 const eth_wallet_address = document.querySelector('.eth_wallet_address').innerText.replace(/\s+/g, '')
 const usdt_wallet_address = document.querySelector('.usdt_wallet_address').innerText.replace(/\s+/g, '')
@@ -30,8 +30,8 @@ submitDepositButton.addEventListener('click', function () {
 
   formData.append("pop", file)
   formData.append("_id", user)
-  formData.append("currency", currency)
-  formData.append("amount", amount)
+  formData.append("currency", _currency)
+  formData.append("amount", amount.value)
   formData.append("name", name)
   formData.append("wallet", _currency == 'Bitcoin' ? bitcoin_wallet_address : _currency == 'Ethereum' ? eth_wallet_address : _currency == 'USDT' ? usdt_wallet_address : _currency == 'BNB smart chain' ? bnb_wallet_address : null)
 
@@ -44,10 +44,8 @@ submitDepositButton.addEventListener('click', function () {
   fetch("https://trustpaddi-waitlist.herokuapp.com/deposit/add", requestOptions)
     .then(response => response.json())
     .then(response => {
-      console.log('response: ', response)
       notification('notification-6', 3000)
-    })
-    .catch(error => {
+    }).catch(error => {
       console.log('error: ', error)
-    })
+    });
 })

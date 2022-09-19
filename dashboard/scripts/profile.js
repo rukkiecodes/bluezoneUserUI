@@ -4,6 +4,7 @@ const token = localStorage.token;
 
 (async () => {
   const name = document.querySelector('#usersname')
+  const name2 = document.querySelector('#greetName')
   const fiatvalue = document.querySelector('#fiatvalue');
   const balvalues = document.querySelector('.balvalues');
 
@@ -16,6 +17,7 @@ const token = localStorage.token;
     })
 
     name.innerText = user.data.user.name;
+    name2.innerText = user.data.user.name;
     fiatvalue.value = user.data.user.investment.toFixed(3);
     balvalues.value = user.data.user.earnings.toFixed(3);
   } catch (error) {

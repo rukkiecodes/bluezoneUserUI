@@ -1,5 +1,5 @@
-const email = localStorage.email
-const token = localStorage.token;
+const _email = localStorage.email
+const _token = localStorage.token;
 
 
 (async () => {
@@ -12,8 +12,8 @@ const token = localStorage.token;
     const user = await axios({
       method: 'post',
       url: 'https://trustpaddi-waitlist.herokuapp.com/auth/profile',
-      headers: { 'Authorization': `Bearer ${token}` },
-      data: { email }
+      headers: { 'Authorization': `Bearer ${_token}` },
+      data: { email: _email }
     })
 
     name.innerText = user.data.user.name;

@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Trade Results - Monitor trades</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/png" href="assets/img/bluezone logo.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/bluezone logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+    <style>
+        .dash {
+            margin: 4.5% 2%;
+            width: 75%;
+            border: #00bcd447 dashed 1px;
+            height: 1px;
+            display: flex;
+        }
+
+        .trade-con {
+            height: 13vh;
+        }
+
+        @media only screen and (min-width: 1100px) {
+            .trade-con {
+                height: 15vh;
+            }
+
+            .dash {
+                margin: 2.5% 2%;
+                width: 80%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/bluezone logo.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+    <div class="main__container-t">
+        <div class="side-div-t p-0">
+            <!-- profile box -->
+            <div class="profileBox pt-2 pb-2" style="     margin-bottom: 5em;
+            margin-top: 2.5em;">
+                <div class="image-wrapper">
+                    <img src="assets/img/bluezone logo.png" alt="image" class="imaged  w36 rounded">
+                </div>
+                <div class="in">
+                    <div class="text-muted">Welcome back</div>
+                    <strong id="usersname">Users name</strong>
+                </div>
+            </div>
+
+
+            <ul class="listview flush transparent no-line image-listview" style="border-radius:10px">
+                <li>
+                    <a href="index.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Dashboard
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Deposit Funds
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="app-withdrawal.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="card-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Withdraw
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="crypto-transactions.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Transactions
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="copytrade.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Copy trader
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="app-settings.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Settings
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./login.html" class="item">
+                        <div class="icon-box bg-danger">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Log out
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- * menu -->
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <div class="side-right-div">
+            <div>
+
+
+                <!-- App Header -->
+                <div class="appHeader">
+                    <div class="left">
+                        <a href="#" class="headerButton goBack">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="pageTitle">
+                        Trade Monitor
+                    </div>
+                    <div class="right">
+
+
+
+                    </div>
+                </div>
+                <!-- * App Header -->
+
+
+                <!-- App Capsule -->
+                <div id="appCapsule">
+                    <!-- <div class="text-small text-secondary p-2">Here you  can Monitor trades from the Trader you copied</div> -->
+                    <div class="section full">
+                        <div class="card listview coinbox mx-2">
+
+                            <ul class="listview flush detailed-list mt-4 ">
+
+                                <li>
+                                    <div class="item" style="
+                                        width: 100%;
+                                    ">
+
+                                        <div class="in flex" style="
+                                            display: flex;
+                                            justify-content: space-between;
+                                        ">
+                                            <div style="
+                                            width: 80%;
+                                        ">
+                                                <p style="
+                                                    display: flex;">Profit :<span class="dash">
+                                                    </span></p>
+                                                <p style="
+                                                    display: flex;">Loss :<span class="dash">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="text-end">
+                                                <p id="profit">1 855.00</p>
+                                                <p id="loss">
+                                                    855.00
+                                                </p>
+                                            </div>
+                                        </div>
+                                        </a>
+                                </li>
+                            </ul>
+
+                            <div class="chart chart-sparkline-danger-2"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="listview-title mt-2">Media Link Listview Inset</div> -->
+                    <ul class="listview image-listview media inset mb-3 copy_list" style="margin-top:6em ;">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="side-div-l">
+            <div class="card card-with-icon" style="top: 10em ;">
+                <div class="card-body pt-3 pb-3 text-center">
+                    <div class="card-icon bg-success mb-2">
+                        <ion-icon name="link"></ion-icon>
+                    </div>
+                    <h3 class="card-titlde mb-1">Refer a Friend</h3>
+                    <p>Invite your friends and earn prizes!</p>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#" class="btn btn-secondary">
+                                <ion-icon name="copy-outline"></ion-icon>
+                                Invite now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-with-icon" style="top:12.5em ;">
+                <div class="card-body pt-3 pb-3 text-center">
+                    <div class="card-icon bg-secondary mb-2">
+                        <ion-icon name="share-social-outline"></ion-icon>
+                    </div>
+                    <h3 class="card-titlde mb-1">Follow Us</h3>
+                    <p>Follow us on social media!</p>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#" class="btn btn-block btn-facebook">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                                Facebook
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="btn btn-block btn-twitter">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                                Twitter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- ========= JS Files =========  -->
+        <!-- axios -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- Splide -->
+        <script src="assets/js/plugins/splide/splide.min.js"></script>
+        <!-- Apex Charts -->
+        <script src="assets/js/plugins/apexcharts/apexcharts.min.js"></script>
+        <!-- Base Js File -->
+        <script src="assets/js/base.js"></script>
+        <script src="./scripts/profile.js"></script>
+        <script>
+
+            const email = localStorage.email
+            const token = localStorage.token
+            const user = localStorage.user
+            const wallet = localStorage.wallet;
+            const copy_list = document.querySelector('.copy_list');
+
+
+
+            //   This is Array of Trade Results .
+            // (1. )  To add a result copy an object e.g
+            // {
+            //                     _id: 1,
+            //                     name: 'Frank Sjögren',
+            //                     currency: 'EURUSD',
+            //                     status: 'sell',
+            //                     statusAmount: '20.00',
+            //                     from: '1.207093',
+            //                     to: '1.206091',
+            //                     amount: 1034,
+            //                     date: '2022.03.05',
+            //                     time: '12:33'
+            //                 },
+
+            // and paste in the Array
+
+            // (2. ) Edit the values
+            // (3. )  Edit status  in the object to profit(buy) if its profit(buy) and loss(sell) if it's loss(sell)
+            // (4. )  Count the total number of profit(buy) in status  and change the value  E.g var sumOfprofit=value;
+            var sumOfprofit = 2;
+            // (5. )  Count the total number of loss(sell) in status  and change the value  E.g var sumOfloss=value;
+            var sumOfloss = 2;
+
+            const results = [];
+
+            (async () => {
+                const copies = await axios({
+                    method: 'post',
+                    url: 'https://trustpaddi-waitlist.herokuapp.com/copy/getCopies',
+                    body: 200
+                })
+
+                results.push(...copies.data.copies)
+
+                var profit = results.filter(function (i) {
+
+                    if (i.bankState === "buy") {
+
+                        const totalProfit = i.amount * sumOfprofit;
+                        console.log(totalProfit)
+                        const totalProfits = document.querySelector('#profit').innerHTML=totalProfit;
+
+                    }
+                 
+
+                })
+                var loss = results.filter(function (i) {
+
+                    if (i.bankState === "sell") {
+
+                        const totalLoss = i.amount * sumOfloss;
+                        console.log(totalLoss)
+                       document.querySelector('#loss').innerHTML=totalLoss;
+                    }
+
+
+                })
+
+
+
+                //      Results
+
+
+                results.forEach((res, index) => {
+                    copy_list.innerHTML += `<li>
+                                                <div class="item">
+                                                    <div class="in trade-con"
+                                                        <div class="w-100" style="    display: flex;justify-content: space-between;width: 100%;">
+                                                            <div class="_id" style="display: none">${res._id}</div>
+                                                            <div class=" flex" style="    display: flex;flex-direction: column;width:80%">
+                                                                <div style="display:flex">
+                                                                    <img src=${res.image} alt="image" style=" margin-top: 5%;border-radius:100px;" width="32" height="32" class="" rounded">
+                                                                <div class="" style="display:flex; line-height: 4;margin-left: 2.5%;">${res.name}</div>
+                                                            </div>
+                                                            <div style="display:flex">
+                                                                <p>${res.currency}<p>, <p style=${res.bankState === "sell" ? "color:red" : "color:green"}> ${res.bankState} ${res.amount}</p>
+                                                            </div>
+        
+                                                            <div class="text-muted " style=" margin-bottom: 5%;">${res.from}  &#x2192; ${res.to}</div>
+                                                        </div>
+                                                        <span class="" style="margin-top: 3em">
+                                                            <div class="text-muted" style="margin: 20% 0;">${new Date(res.createdAt).getDate()}/${new Date(res.createdAt).getMonth()}/${new Date(res.createdAt).getFullYear() }</div>
+                                                            <div class="text-muted">${res.amount}.00 </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </li>`
+                })
+            })();
+
+  
+
+
+        </script>
+        <script src="assets/js/plugins/apexcharts/apexcharts.min.js"></script>
+
+
+        <script>
+
+            var sparklineAreaExampleSuccess1 = {
+                series: [{
+                    data: [555, 1222, 777, 888, 555, 888, 999, 1222]
+                }],
+                chart: {
+                    type: 'area',
+                    width: '100%',
+                    height: 70,
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    width: 2,
+                },
+                colors: ['#1DCC70'],
+                tooltip: {
+                    enabled: false
+                }
+            };
+            var sparklineAreaExampleSuccess2 = {
+                series: [{
+                    data: [55, 66, 55, 77, 66, 180, 290, 333]
+                }],
+                chart: {
+                    type: 'area',
+                    width: '100%',
+                    height: 70,
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    width: 2,
+                },
+                colors: ['#1DCC70'],
+                tooltip: {
+                    enabled: false
+                }
+            };
+            var sparklineAreaExampleDanger1 = {
+                series: [{
+                    data: [2222, 1666, 1444, 1777, 1333, 1111, 777, 666]
+                }],
+                chart: {
+                    type: 'area',
+                    width: '100%',
+                    height: 70,
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    width: 2,
+                },
+                colors: ['#FF396F'],
+                tooltip: {
+                    enabled: false
+                }
+            };
+            var sparklineAreaExampleDanger2 = {
+                series: [{
+                    data: [1200, 1444, 2900, 505, 531, 1900, 555, 75]
+                }],
+                chart: {
+                    type: 'area',
+                    width: '100%',
+                    height: 70,
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    width: 2,
+                },
+                colors: ['#FF396F'],
+                tooltip: {
+                    enabled: false
+                }
+            };
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('.chart-sparkline-success-1').forEach(chart => new ApexCharts(chart, sparklineAreaExampleSuccess1).render());
+                document.querySelectorAll('.chart-sparkline-success-2').forEach(chart => new ApexCharts(chart, sparklineAreaExampleSuccess2).render());
+                document.querySelectorAll('.chart-sparkline-danger-1').forEach(chart => new ApexCharts(chart, sparklineAreaExampleDanger1).render());
+                document.querySelectorAll('.chart-sparkline-danger-2').forEach(chart => new ApexCharts(chart, sparklineAreaExampleDanger2).render());
+
+            })
+
+        </script>
+</body>
+
+</html>

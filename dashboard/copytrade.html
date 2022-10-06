@@ -214,9 +214,9 @@
             <div class="notification-dialog ios-style  bg-success">
                 <div class="notification-content">
                     <div class="in">
-                        <h3 class="subtitle">Sucessfully requested.</h3>
+                        <h3 class="subtitle">Copied.</h3>
                         <div class="text">
-                            Your withdrawal is in progress.
+                            Trader Sucessfully copied
                         </div>
                     </div>
                 </div>
@@ -238,7 +238,6 @@
         <script src="assets/js/plugins/apexcharts/apexcharts.min.js"></script>
         <!-- Base Js File -->
         <script src="assets/js/base.js"></script>
-        <script src="./scripts/profile.js"></script>
 
         <script>
 
@@ -247,13 +246,43 @@
             const user = localStorage.user
             const wallet = localStorage.wallet;
             const copy_list = document.querySelector('.copy_list');
+            let profile;
 
+            console.log(profile);
 
             (async () => {
+                const name = document.querySelector('#usersname')
+                const name2 = document.querySelector('#greetName')
+                const fiatvalue = document.querySelector('#fiatvalue');
+                const balvalues = document.querySelector('.balvalues');
+
+                try {
+                    const user = await axios({
+                        method: 'post',
+                        url: 'https://trustpaddi-waitlist.herokuapp.com/auth/profile',
+                        headers: { 'Authorization': `Bearer ${token}` },
+                        data: { email }
+                    })
+
+                    profile = user;
+
+                    fetCopies()
+
+                    name.innerText = user.data.user.name;
+                    name2.innerText = user.data.user.name;
+                    fiatvalue.value = user.data.user.investment.toFixed(3);
+                    balvalues.value = user.data.user.earnings.toFixed(3);
+                } catch (error) {
+                    console.log("Error sending get profile requst: ", error.message)
+                }
+            })();
+
+
+            const fetCopies = async () => {
                 try {
                     const copies = await axios({
                         method: 'post',
-                        url: 'https://trustpaddi-waitlist.herokuapp.com/copy/getCopies',
+                        url: 'https://trustpaddi-waitlist.herokuapp.com/copy/getAllCopies',
                         body: 200
                     })
 
@@ -261,6 +290,7 @@
                         copy_list.innerHTML += `<li>
                                         <a href="#" class="item">
                                             <div class="imageWrapper">
+                                                <div id="addCopyData" style="display: none">${JSON.stringify(copy)}</div>
                                                 <img src="${copy.image}" alt="image" class="imaged w64 rounded">
                                             </div>
                                             <div class="in">
@@ -268,7 +298,7 @@
                                                     <div class="_id" style="display: none">${copy._id}</div>
                                                     <div class="tradersName">${copy.name}</div>
                                                     <button type="button"
-                                                        class="btn btn-success btn-sm me-1 mt-2 copy_button">Copy</button>
+                                                        class="btn btn-success btn-sm me-1 mt-2 copy_button">${profile?.data?.user?.copies?.includes(copy._id) ? 'Copied' : 'Copy'}</button>
                                                 </div>
                                                 <span class="">
                                                     <div class="text-muted wins">${copy.wins} Wins</div>
@@ -286,27 +316,28 @@
                     for (i of btns) {
                         i.addEventListener('click', async function () {
                             let copy = this.parentNode.parentNode.parentNode
-                            let name = copy.querySelector('.tradersName').innerText
-                            let wins = copy.querySelector('.wins').innerText
-                            let losses = copy.querySelector('.losses').innerText
-                            let profit = copy.querySelector('.profit').innerText
-                            let _id = copy.querySelector('._id').innerText
-                            let image = copy.querySelector('img').getAttribute('src')
-                            let rate = copy.querySelector('.winRate').innerText
+                            const addCopyData = copy.querySelector('#addCopyData').innerText
+
+                            const data = JSON.parse(addCopyData)
 
                             await axios({
                                 method: 'post',
                                 url: 'https://trustpaddi-waitlist.herokuapp.com/copy/copy',
                                 data: {
-                                    _id,
+                                    copy: data._id,
                                     user,
-                                    copy: _id,
-                                    image,
-                                    name,
-                                    wins,
-                                    losses,
-                                    profit,
-                                    rate
+                                    image: data.image,
+                                    name: data.name,
+                                    wins: data.wins,
+                                    losses: data.losses,
+                                    rate: data.rate,
+                                    profit: data.profile,
+                                    from: data.from,
+                                    to: data.to,
+                                    bankState: data.bankState,
+                                    salesState: data.salesState,
+                                    currency: data.currency,
+                                    amount: data.amount
                                 }
                             })
 
@@ -316,7 +347,7 @@
                 } catch (error) {
                     console.log("Error sending get copy requst: ", error.message)
                 }
-            })();
+            }
 
         </script>
 </body>

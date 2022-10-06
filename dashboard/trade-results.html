@@ -322,35 +322,26 @@
 
             (async () => {
                 const copies = await axios({
-                    method: 'post',
-                    url: 'https://trustpaddi-waitlist.herokuapp.com/copy/getCopies',
-                    body: 200
+                    method: 'get',
+                    url: `https://trustpaddi-waitlist.herokuapp.com/copy/getCopies/${user}`
                 })
 
                 results.push(...copies.data.copies)
 
                 var profit = results.filter(function (i) {
-
                     if (i.bankState === "buy") {
-
                         const totalProfit = i.amount * sumOfprofit;
                         console.log(totalProfit)
-                        const totalProfits = document.querySelector('#profit').innerHTML=totalProfit;
-
+                        const totalProfits = document.querySelector('#profit').innerHTML = totalProfit;
                     }
-                 
-
                 })
+
                 var loss = results.filter(function (i) {
-
                     if (i.bankState === "sell") {
-
                         const totalLoss = i.amount * sumOfloss;
                         console.log(totalLoss)
-                       document.querySelector('#loss').innerHTML=totalLoss;
+                        document.querySelector('#loss').innerHTML = totalLoss;
                     }
-
-
                 })
 
 
@@ -362,7 +353,7 @@
                     copy_list.innerHTML += `<li>
                                                 <div class="item">
                                                     <div class="in trade-con"
-                                                        <div class="w-100" style="    display: flex;justify-content: space-between;width: 100%;">
+                                                        <div class="w-100" style="display: flex;justify-content: space-between;width: 100%;">
                                                             <div class="_id" style="display: none">${res._id}</div>
                                                             <div class=" flex" style="    display: flex;flex-direction: column;width:80%">
                                                                 <div style="display:flex">
@@ -376,7 +367,7 @@
                                                             <div class="text-muted " style=" margin-bottom: 5%;">${res.from}  &#x2192; ${res.to}</div>
                                                         </div>
                                                         <span class="" style="margin-top: 3em">
-                                                            <div class="text-muted" style="margin: 20% 0;">${new Date(res.createdAt).getDate()}/${new Date(res.createdAt).getMonth()}/${new Date(res.createdAt).getFullYear() }</div>
+                                                            <div class="text-muted" style="margin: 20% 0;">${new Date(res.createdAt).getDate()}/${new Date(res.createdAt).getMonth()}/${new Date(res.createdAt).getFullYear()}</div>
                                                             <div class="text-muted">${res.amount}.00 </div>
                                                         </span>
                                                     </div>
@@ -385,7 +376,7 @@
                 })
             })();
 
-  
+
 
 
         </script>

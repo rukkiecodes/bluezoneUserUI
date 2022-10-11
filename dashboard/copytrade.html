@@ -298,7 +298,7 @@
                                                     <div class="_id" style="display: none">${copy._id}</div>
                                                     <div class="tradersName">${copy.name}</div>
                                                     <button type="button"
-                                                        class="btn btn-success btn-sm me-1 mt-2 copy_button">${profile?.data?.user?.copies?.includes(copy._id) ? 'Copied' : 'Copy'}</button>
+                                                        class="btn ${profile?.data?.user.copies?.includes(copy._id) ? 'btn-warning' : 'btn-success'} btn-sm me-1 mt-2 copy_button">${profile?.data?.user?.copies?.includes(copy._id) ? 'Copied' : 'Copy'}</button>
                                                 </div>
                                                 <span class="">
                                                     <div class="text-muted wins">${copy.wins} Wins</div>

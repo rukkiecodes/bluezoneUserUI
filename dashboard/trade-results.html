@@ -322,8 +322,11 @@
 
             (async () => {
                 const copies = await axios({
-                    method: 'get',
-                    url: `https://trustpaddi-waitlist.herokuapp.com/copy/getCopies/${user}`
+                    method: 'post',
+                    url: `https://trustpaddi-waitlist.herokuapp.com/copy/getCopies`,
+                    data: {
+                        _id: user
+                    }
                 })
 
                 results.push(...copies.data.copies)
